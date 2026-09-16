@@ -89,7 +89,33 @@ footer{padding:25px 0;text-align:center;color:var(--muted);font-size:13px}
   nav,.actions{display:none}.hero{padding:30px 0}.card,.project{box-shadow:none}
   section{padding:30px 0}body{background:#fff}
 }
+
+.message-me-wrap{margin-top:22px}
+.message-me-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:11px 18px;
+  border:1px solid #163f70;
+  border-radius:10px;
+  background:#163f70;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  font-size:14px;
+  line-height:1;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+}
+.message-me-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 7px 18px rgba(22,63,112,.20);
+  background:#12355f;
+}
+.message-me-icon{font-size:16px;line-height:1}
+
 </style>
+
 </head>
 <body>
 
@@ -317,6 +343,13 @@ footer{padding:25px 0;text-align:center;color:var(--muted);font-size:13px}
             <a href="https://in.linkedin.com/in/deepak-pal-a2a427136" target="_blank" rel="noopener">LinkedIn</a>
             
           </div>
+          <div class="message-me-wrap">
+            <a class="message-me-btn" href="mailto:deepbanny4@gmail.com?subject=Message%20from%20Deepak%20Pal%20Portfolio" aria-label="Message Deepak Pal by email">
+              <span class="message-me-icon">✉</span>
+              <span>Message Me</span>
+            </a>
+          </div>
+
         </div>
         <div>
           <h3>Professional Focus</h3>
@@ -354,32 +387,5 @@ function toggleMenu(){
   }
 }
 </script>
-
-<section id="message" class="message-section" style="padding:40px 20px;">
-  <div style="max-width:760px;margin:0 auto;">
-    <div style="margin-bottom:20px;">
-      <h2 style="margin-bottom:8px;">Message Me</h2>
-      <p>Have a question, project idea, or opportunity? Send me a message.</p>
-    </div>
-
-    <form id="messageForm" style="display:grid;gap:14px;">
-      <input id="msgName" type="text" placeholder="Your Name" required
-             style="width:100%;padding:14px;border-radius:10px;border:1px solid #ccc;">
-      <input id="msgEmail" type="email" placeholder="Your Email" required
-             style="width:100%;padding:14px;border-radius:10px;border:1px solid #ccc;">
-      <textarea id="msgText" rows="6" placeholder="Your Message" required
-                style="width:100%;padding:14px;border-radius:10px;border:1px solid #ccc;resize:vertical;"></textarea>
-      <button type="submit"
-              style="padding:14px 20px;border:0;border-radius:10px;cursor:pointer;font-weight:700;">
-        Send Message
-      </button>
-    </form>
-    <p style="font-size:.9rem;margin-top:12px;">
-      Clicking Send Message will open your email app with the message addressed to
-      <strong>deepbanny4@gmail.com</strong>.
-    </p>
-  </div>
-</section>
-
 </body>
 </html>
