@@ -354,5 +354,32 @@ function toggleMenu(){
   }
 }
 </script>
+
+<section id="message" class="message-section" style="padding:40px 20px;">
+  <div style="max-width:760px;margin:0 auto;">
+    <div style="margin-bottom:20px;">
+      <h2 style="margin-bottom:8px;">Message Me</h2>
+      <p>Have a question, project idea, or opportunity? Send me a message.</p>
+    </div>
+
+    <form id="messageForm" style="display:grid;gap:14px;">
+      <input id="msgName" type="text" placeholder="Your Name" required
+             style="width:100%;padding:14px;border-radius:10px;border:1px solid #ccc;">
+      <input id="msgEmail" type="email" placeholder="Your Email" required
+             style="width:100%;padding:14px;border-radius:10px;border:1px solid #ccc;">
+      <textarea id="msgText" rows="6" placeholder="Your Message" required
+                style="width:100%;padding:14px;border-radius:10px;border:1px solid #ccc;resize:vertical;"></textarea>
+      <button type="submit"
+              style="padding:14px 20px;border:0;border-radius:10px;cursor:pointer;font-weight:700;">
+        Send Message
+      </button>
+    </form>
+    <p style="font-size:.9rem;margin-top:12px;">
+      Clicking Send Message will open your email app with the message addressed to
+      <strong>deepbanny4@gmail.com</strong>.
+    </p>
+  </div>
+</section>
+
 </body>
 </html>
