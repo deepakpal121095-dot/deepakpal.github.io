@@ -447,5 +447,69 @@ function toggleMenu(){
   </div>
 </div>
 
+
+<script>
+(function () {
+  function initMessageBox() {
+    const modal = document.getElementById("messageModal");
+    const openBtn = document.getElementById("openMessageBtn");
+    const closeBtn = document.getElementById("closeMessageBtn");
+    const form = document.getElementById("messageForm");
+
+    if (!modal || !openBtn || !closeBtn || !form) return;
+
+    openBtn.addEventListener("click", function () {
+      modal.classList.add("show");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      const nameInput = document.getElementById("msgName");
+      if (nameInput) setTimeout(() => nameInput.focus(), 100);
+    });
+
+    function closeModal() {
+      modal.classList.remove("show");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    closeBtn.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && modal.classList.contains("show")) {
+        closeModal();
+      }
+    });
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("msgName").value.trim();
+      const email = document.getElementById("msgEmail").value.trim();
+      const message = document.getElementById("msgText").value.trim();
+
+      const subject = encodeURIComponent("Portfolio Message from " + name);
+      const body = encodeURIComponent(
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n\n" +
+        "Message:\n" + message
+      );
+
+      window.location.href =
+        "mailto:deepbanny4@gmail.com?subject=" + subject + "&body=" + body;
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initMessageBox);
+  } else {
+    initMessageBox();
+  }
+})();
+</script>
+
 </body>
 </html>
