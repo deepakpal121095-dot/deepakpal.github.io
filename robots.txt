@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://deepakpal121095-dot.github.io/deepakpal.github.io/sitemap.xml
