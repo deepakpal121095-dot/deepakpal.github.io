@@ -152,6 +152,40 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
 .client-work{display:flex;gap:8px;align-items:flex-start;color:var(--muted);font-size:13px;line-height:1.55}
 .client-work:before{content:"✓";flex:none;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 17%,var(--surface));color:var(--primary);font-size:11px;font-weight:950;margin-top:1px}
 
+
+/* Professional additions */
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.service-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:23px;box-shadow:var(--shadow);transition:.25s}
+.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.service-icon{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:var(--surface2);font-size:22px;margin-bottom:15px}
+.service-card h3{font-size:16px;margin-bottom:6px;color:var(--text)}
+.service-card p{font-size:12px;color:var(--muted)}
+.learning-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.learning-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}
+.learning-item{margin-top:17px}.learning-top{display:flex;justify-content:space-between;gap:15px;font-size:12px;font-weight:900}
+.learning-top span:last-child{color:var(--muted)}
+.progress{height:8px;background:var(--surface2);border-radius:99px;overflow:hidden;margin-top:7px;border:1px solid var(--line)}
+.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:99px}
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.big-stat{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:22px;text-align:center;box-shadow:var(--shadow)}
+.big-stat strong{display:block;font-size:27px;color:var(--primary);letter-spacing:-1px}
+.big-stat span{font-size:11px;color:var(--muted);font-weight:800}
+.showcase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.showcase-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.showcase-visual{height:155px;display:grid;place-items:center;background:linear-gradient(135deg,var(--surface2),color-mix(in srgb,var(--primary) 9%,var(--surface2)));font-size:42px}
+.showcase-body{padding:20px}.showcase-body h3{font-size:16px;margin-bottom:5px}.showcase-body p{font-size:12px;color:var(--muted)}
+.testimonial{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:var(--shadow);position:relative}
+.testimonial:before{content:"“";position:absolute;right:22px;top:4px;font-size:60px;color:var(--accent);opacity:.5;font-family:Georgia,serif}
+.testimonial p{font-size:14px;color:var(--muted);font-style:italic;max-width:720px}.testimonial strong{display:block;margin-top:15px;font-size:13px;color:var(--text)}
+.testimonial small{color:var(--muted);font-size:11px}
+.section-label{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);font-weight:950;margin-bottom:7px}
+@media(max-width:900px){
+  .services-grid{grid-template-columns:1fr 1fr}.stats-strip{grid-template-columns:1fr 1fr}.showcase-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .services-grid,.learning-grid,.showcase-grid{grid-template-columns:1fr}.stats-strip{grid-template-columns:1fr 1fr}
+}
+
 /* Responsive */
 @media(max-width:900px){
   .nav-links{display:none}.mobile-menu{display:block}.nav-actions{margin-left:auto}
@@ -190,7 +224,7 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
   <div class="container nav-inner">
     <a class="logo" href="#home">DP<span>.</span></a>
     <div class="nav-links" id="navLinks">
-      <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a>
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#services">Services</a><a href="#projects">Projects</a>
       <a href="#skills">Skills</a><a href="#clients">Clients</a><a href="#contact">Contact</a>
     </div>
     <div class="nav-actions">
@@ -209,7 +243,7 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
       <p class="lead">I work with data, reporting, dashboards, automation and digital solutions to turn everyday business requirements into practical, organized systems.</p>
       <div class="actions">
         <button class="btn btn-primary" onclick="window.print()">📄 Download / Print Resume</button>
-        <a class="btn btn-outline" href="#projects">🚀 View Projects</a>
+        <a class="btn btn-outline" href="#projects">🚀 View Projects</a><a class="btn btn-outline" href="#services">⚡ Services</a>
         <button class="btn btn-outline" id="heroMessageBtn">✉ Message Me</button>
       </div>
     </div>
@@ -265,6 +299,23 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
 </div>
 </section>
 
+
+<section id="services">
+<div class="container">
+  <div class="section-head">
+    <span class="section-label">What I Can Help With</span>
+    <h2>Services</h2>
+    <p>Practical digital, data and automation solutions for everyday business needs.</p>
+  </div>
+  <div class="services-grid">
+    <article class="service-card"><div class="service-icon">📊</div><h3>Data Analysis</h3><p>Excel, SQL, CSV processing and structured data analysis for clearer business information.</p></article>
+    <article class="service-card"><div class="service-icon">📈</div><h3>Dashboard Development</h3><p>Business, sales and operational dashboards designed for quick review and decision support.</p></article>
+    <article class="service-card"><div class="service-icon">⚙️</div><h3>Automation</h3><p>Google Sheets, Apps Script and Excel-based workflow improvements to reduce repetitive work.</p></article>
+    <article class="service-card"><div class="service-icon">🌐</div><h3>Web Applications</h3><p>Responsive HTML, CSS and JavaScript interfaces for practical business workflows.</p></article>
+  </div>
+</div>
+</section>
+
 <section id="projects">
 <div class="container">
   <div class="section-head"><h2>Selected Projects</h2><p>Use the filters or open any project for a quick detail view.</p></div>
@@ -295,6 +346,22 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
 </div>
 </section>
 
+
+
+<section>
+<div class="container">
+  <div class="section-head">
+    <span class="section-label">Portfolio Snapshot</span>
+    <h2>Work at a Glance</h2>
+  </div>
+  <div class="stats-strip">
+    <div class="big-stat"><strong>12+</strong><span>Projects</span></div>
+    <div class="big-stat"><strong>3</strong><span>Clients</span></div>
+    <div class="big-stat"><strong>8+</strong><span>Tools</span></div>
+    <div class="big-stat"><strong>5+</strong><span>Core Areas</span></div>
+  </div>
+</div>
+</section>
 
 <section id="clients" class="clients-section">
 <div class="container">
@@ -331,6 +398,31 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
 </div>
 </section>
 
+
+<section>
+<div class="container">
+  <div class="section-head">
+    <span class="section-label">Growth & Development</span>
+    <h2>Currently Learning</h2>
+    <p>Building stronger skills through continuous learning and practical projects.</p>
+  </div>
+  <div class="learning-grid">
+    <div class="learning-card">
+      <h3>Skill Development</h3>
+      <div class="learning-item"><div class="learning-top"><span>Excel Advanced</span><span>90%</span></div><div class="progress"><span style="width:90%"></span></div></div>
+      <div class="learning-item"><div class="learning-top"><span>SQL</span><span>70%</span></div><div class="progress"><span style="width:70%"></span></div></div>
+      <div class="learning-item"><div class="learning-top"><span>AI Tools</span><span>40%</span></div><div class="progress"><span style="width:40%"></span></div></div>
+      <div class="learning-item"><div class="learning-top"><span>English Communication</span><span>50%</span></div><div class="progress"><span style="width:50%"></span></div></div>
+    </div>
+    <div class="learning-card">
+      <h3>Learning Approach</h3>
+      <p style="margin-top:10px">Learn → Practice → Build → Improve</p>
+      <p style="margin-top:12px">The focus is on applying new skills to real data, reporting, dashboard, automation and web projects.</p>
+    </div>
+  </div>
+</div>
+</section>
+
 <section id="skills">
 <div class="container">
   <div class="section-head"><h2>Skills & Technologies</h2><p>Tools used across practical data, reporting, automation and digital work.</p></div>
@@ -354,6 +446,38 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
     <div class="focus-card"><strong>Data & Reporting</strong><span>Excel, SQL, CSV processing and structured business reporting.</span></div>
     <div class="focus-card"><strong>Dashboards & Automation</strong><span>Google Sheets, Apps Script, BI reporting and workflow improvements.</span></div>
     <div class="focus-card"><strong>Digital Solutions</strong><span>Responsive web interfaces and business-focused digital creatives.</span></div>
+  </div>
+</div>
+</section>
+
+
+<section>
+<div class="container">
+  <div class="section-head">
+    <span class="section-label">Selected Work</span>
+    <h2>Work Showcase</h2>
+    <p>A visual-ready area for adding screenshots of dashboards, databases and web applications.</p>
+  </div>
+  <div class="showcase-grid">
+    <article class="showcase-card"><div class="showcase-visual">📊</div><div class="showcase-body"><h3>Business Dashboard</h3><p>Add your dashboard screenshot here to show real project work.</p></div></article>
+    <article class="showcase-card"><div class="showcase-visual">👥</div><div class="showcase-body"><h3>Employee Database</h3><p>Show attendance, salary and employee-management workflow screens.</p></div></article>
+    <article class="showcase-card"><div class="showcase-visual">💻</div><div class="showcase-body"><h3>Product Web App</h3><p>Add a screenshot of the Product Rate Checking Web App.</p></div></article>
+  </div>
+</div>
+</section>
+
+
+<section>
+<div class="container">
+  <div class="section-head">
+    <span class="section-label">Client Feedback</span>
+    <h2>Testimonials</h2>
+    <p>Add verified client feedback here when you receive it.</p>
+  </div>
+  <div class="testimonial">
+    <p>“Client feedback can be added here after receiving permission to publish the testimonial.”</p>
+    <strong>Client Testimonial</strong>
+    <small>Verified client feedback</small>
   </div>
 </div>
 </section>
