@@ -160,11 +160,6 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
 .service-icon{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:var(--surface2);font-size:22px;margin-bottom:15px}
 .service-card h3{font-size:16px;margin-bottom:6px;color:var(--text)}
 .service-card p{font-size:12px;color:var(--muted)}
-.learning-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.learning-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}
-.learning-item{margin-top:17px}.learning-top{display:flex;justify-content:space-between;gap:15px;font-size:12px;font-weight:900}
-.learning-top span:last-child{color:var(--muted)}
-.progress{height:8px;background:var(--surface2);border-radius:99px;overflow:hidden;margin-top:7px;border:1px solid var(--line)}
 .progress span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:99px}
 .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .big-stat{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:22px;text-align:center;box-shadow:var(--shadow)}
@@ -185,7 +180,6 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
 @media(max-width:560px){
   .services-grid,.learning-grid,.showcase-grid{grid-template-columns:1fr}.stats-strip{grid-template-columns:1fr 1fr}
 }
-
 /* Responsive */
 @media(max-width:900px){
   .nav-links{display:none}.mobile-menu{display:block}.nav-actions{margin-left:auto}
@@ -224,7 +218,7 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
   <div class="container nav-inner">
     <a class="logo" href="#home">DP<span>.</span></a>
     <div class="nav-links" id="navLinks">
-      <a href="#about">About</a><a href="#experience">Experience</a><a href="#services">Services</a><a href="#projects">Projects</a>
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#capabilities">Capabilities</a><a href="#projects">Projects</a>
       <a href="#skills">Skills</a><a href="#clients">Clients</a><a href="#contact">Contact</a>
     </div>
     <div class="nav-actions">
@@ -399,26 +393,21 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
 </section>
 
 
-<section>
+
+
+
+<section id="capabilities">
 <div class="container">
   <div class="section-head">
-    <span class="section-label">Growth & Development</span>
-    <h2>Currently Learning</h2>
-    <p>Building stronger skills through continuous learning and practical projects.</p>
+    <span class="section-label">Professional Capabilities</span>
+    <h2>What I Do</h2>
+    <p>Practical data, reporting, dashboard, automation and digital solutions for business workflows.</p>
   </div>
-  <div class="learning-grid">
-    <div class="learning-card">
-      <h3>Skill Development</h3>
-      <div class="learning-item"><div class="learning-top"><span>Excel Advanced</span><span>90%</span></div><div class="progress"><span style="width:90%"></span></div></div>
-      <div class="learning-item"><div class="learning-top"><span>SQL</span><span>70%</span></div><div class="progress"><span style="width:70%"></span></div></div>
-      <div class="learning-item"><div class="learning-top"><span>AI Tools</span><span>40%</span></div><div class="progress"><span style="width:40%"></span></div></div>
-      <div class="learning-item"><div class="learning-top"><span>English Communication</span><span>50%</span></div><div class="progress"><span style="width:50%"></span></div></div>
-    </div>
-    <div class="learning-card">
-      <h3>Learning Approach</h3>
-      <p style="margin-top:10px">Learn → Practice → Build → Improve</p>
-      <p style="margin-top:12px">The focus is on applying new skills to real data, reporting, dashboard, automation and web projects.</p>
-    </div>
+  <div class="services-grid">
+    <article class="service-card"><div class="service-icon">📊</div><h3>Data Analysis</h3><p>Excel, SQL, CSV processing and structured data analysis for organized business information.</p></article>
+    <article class="service-card"><div class="service-icon">📈</div><h3>Business Dashboards</h3><p>Sales, operational and business dashboards designed for clear reporting and review.</p></article>
+    <article class="service-card"><div class="service-icon">⚙️</div><h3>Process Automation</h3><p>Google Sheets, Apps Script and Excel solutions for repeatable business workflows.</p></article>
+    <article class="service-card"><div class="service-icon">🌐</div><h3>Digital Solutions</h3><p>Responsive web applications and practical digital interfaces for business use.</p></article>
   </div>
 </div>
 </section>
