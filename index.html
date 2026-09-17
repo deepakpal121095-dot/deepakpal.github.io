@@ -176,6 +176,16 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
 @media(max-width:560px){
   .services-grid,.learning-grid,.showcase-grid{grid-template-columns:1fr}.stats-strip{grid-template-columns:1fr 1fr}
 }
+
+.project-progress-banner{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:30px 32px;border-radius:24px;background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.project-progress-banner:after{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-90px;top:-110px}
+.project-progress-banner h2{font-size:clamp(25px,4vw,34px);letter-spacing:-1px;margin:2px 0 4px}
+.project-progress-banner p{font-size:12px;color:#dce8f4}
+.project-progress-banner .section-label{color:#f1c95d}
+.progress-points{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;position:relative;z-index:1}
+.progress-points span{padding:8px 11px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.09);border-radius:999px;font-size:10px;font-weight:850}
+@media(max-width:900px){.project-progress-banner{flex-direction:column;align-items:flex-start}.progress-points{justify-content:flex-start}}
+
 /* Responsive */
 @media(max-width:900px){
   .nav-links{display:none}.mobile-menu{display:block}.nav-actions{margin-left:auto}
@@ -227,10 +237,10 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
 <header class="hero" id="home">
   <div class="container hero-grid">
     <div>
-      <span class="badge">DATA • REPORTING • AUTOMATION • DIGITAL SOLUTIONS</span>
+      <span class="badge">BUSINESS SUPPORT • DATA • AUTOMATION • DIGITAL SOLUTIONS</span>
       <h1>Deepak <span>Pal</span></h1>
       <div class="subtitle">Data Analyst | Business Support & Digital Solutions</div>
-      <p class="lead">I work with data, reporting, dashboards, automation and digital solutions to turn everyday business requirements into practical, organized systems.</p>
+      <p class="lead">I turn ideas into practical business solutions through data analysis, dashboards, automation, reporting and digital systems.</p>
       <div class="actions">
         <button class="btn btn-primary" onclick="window.print()">📄 Download / Print Resume</button>
         <a class="btn btn-outline" href="#projects">🚀 View Projects</a><a class="btn btn-outline" href="#services">⚡ Services</a>
@@ -306,6 +316,22 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
 </div>
 </section>
 
+
+<section>
+<div class="container">
+  <div class="project-progress-banner">
+    <div>
+      <span class="section-label">Projects & Progress</span>
+      <h2>12+ Projects Completed</h2>
+      <p>Real Work · Real Impact · Continuous Growth</p>
+    </div>
+    <div class="progress-points">
+      <span>✓ Quality Focus</span><span>✓ Data-Driven Solutions</span><span>✓ Continuous Growth</span>
+    </div>
+  </div>
+</div>
+</section>
+
 <section id="projects">
 <div class="container">
   <div class="section-head"><h2>Selected Projects</h2><p>Use the filters or open any project for a quick detail view.</p></div>
@@ -320,17 +346,17 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
 
   <div class="projects" id="projectGrid">
     <article class="card project" data-category="data" data-project="product-db"><div class="project-icon">📊</div><h3>Product Database & Search System</h3><p>Structured product data with search, filters and easier product management.</p><div class="project-tags"><span class="tag">Google Sheets</span><span class="tag">Data</span></div><div class="project-actions"><button class="details-btn" data-open-project="product-db">View Details →</button></div></article>
-    <article class="card project" data-category="dashboard" data-project="sales-dashboard"><div class="project-icon">📈</div><h3>Sales Dashboard & Analytics</h3><p>Sales tracking and visual reporting for faster business-level insights.</p><div class="project-tags"><span class="tag">Dashboard</span><span class="tag">Analytics</span></div><div class="project-actions"><button class="details-btn" data-open-project="sales-dashboard">View Details →</button></div></article>
-    <article class="card project" data-category="web" data-project="rate-app"><div class="project-icon">💻</div><h3>Product Rate Checking Web App</h3><p>Web interface connected with Google Sheets for product and sales workflows.</p><div class="project-tags"><span class="tag">Apps Script</span><span class="tag">HTML</span></div><div class="project-actions"><button class="details-btn" data-open-project="rate-app">View Details →</button></div></article>
-    <article class="card project" data-category="automation" data-project="freedom-macro"><div class="project-icon">⚙️</div><h3>Freedom Macro – Data Processing</h3><p>CSV processing, data organization and workflow automation for recurring reporting tasks.</p><div class="project-tags"><span class="tag">Excel</span><span class="tag">Automation</span></div><div class="project-actions"><button class="details-btn" data-open-project="freedom-macro">View Details →</button></div></article>
-    <article class="card project" data-category="dashboard" data-project="quicksight"><div class="project-icon">☁️</div><h3>QuickSight Reporting</h3><p>Workforce, labor-detail and project reporting workflows using business intelligence reports.</p><div class="project-tags"><span class="tag">QuickSight</span><span class="tag">Reporting</span></div><div class="project-actions"><button class="details-btn" data-open-project="quicksight">View Details →</button></div></article>
+    <article class="card project" data-category="dashboard" data-project="sales-dashboard"><div class="project-icon">📈</div><h3>Sales Dashboard & Analytics</h3><p>Live sales tracking and performance dashboard for business review.</p><div class="project-tags"><span class="tag">Dashboard</span><span class="tag">Analytics</span></div><div class="project-actions"><button class="details-btn" data-open-project="sales-dashboard">View Details →</button></div></article>
+    <article class="card project" data-category="web" data-project="rate-app"><div class="project-icon">💻</div><h3>Product Rate Checking Web App</h3><p>Google Apps Script and HTML web application for product rate checking.</p><div class="project-tags"><span class="tag">Apps Script</span><span class="tag">HTML</span></div><div class="project-actions"><button class="details-btn" data-open-project="rate-app">View Details →</button></div></article>
+    <article class="card project" data-category="automation" data-project="freedom-macro"><div class="project-icon">⚙️</div><h3>Freedom Macro – Data Processing</h3><p>CSV processing, data cleaning and automation for recurring reporting tasks.</p><div class="project-tags"><span class="tag">Excel</span><span class="tag">Automation</span></div><div class="project-actions"><button class="details-btn" data-open-project="freedom-macro">View Details →</button></div></article>
+    <article class="card project" data-category="dashboard" data-project="quicksight"><div class="project-icon">☁️</div><h3>Amazon QuickSight Reporting</h3><p>Workforce stats, labor detail and project reporting workflows.</p><div class="project-tags"><span class="tag">QuickSight</span><span class="tag">Reporting</span></div><div class="project-actions"><button class="details-btn" data-open-project="quicksight">View Details →</button></div></article>
     <article class="card project" data-category="data" data-project="labor-reporting"><div class="project-icon">👥</div><h3>Labor Data Reporting System</h3><p>Labor data processing, validation, reporting and project-specific workflow support.</p><div class="project-tags"><span class="tag">Data</span><span class="tag">Reporting</span></div><div class="project-actions"><button class="details-btn" data-open-project="labor-reporting">View Details →</button></div></article>
-    <article class="card project" data-category="web" data-project="mobile-ui"><div class="project-icon">📱</div><h3>Mobile UI & UX Updates</h3><p>Responsive interface improvements focused on usability across mobile screens.</p><div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span></div><div class="project-actions"><button class="details-btn" data-open-project="mobile-ui">View Details →</button></div></article>
+    <article class="card project" data-category="web" data-project="mobile-ui"><div class="project-icon">📱</div><h3>Mobile UI & User Experience Updates</h3><p>Responsive design and mobile-view improvements focused on usability.</p><div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span></div><div class="project-actions"><button class="details-btn" data-open-project="mobile-ui">View Details →</button></div></article>
     <article class="card project" data-category="automation" data-project="report-auto"><div class="project-icon">📋</div><h3>Report Automation System</h3><p>Structured recurring reporting processes to reduce repetitive manual work.</p><div class="project-tags"><span class="tag">Automation</span><span class="tag">Reports</span></div><div class="project-actions"><button class="details-btn" data-open-project="report-auto">View Details →</button></div></article>
-    <article class="card project" data-category="creative" data-project="social-design"><div class="project-icon">🎨</div><h3>Instagram & Facebook Creative Design</h3><p>Promotional post concepts and social-media creatives for business communication.</p><div class="project-tags"><span class="tag">Canva</span><span class="tag">Social Media</span></div><div class="project-actions"><button class="details-btn" data-open-project="social-design">View Details →</button></div></article>
-    <article class="card project" data-category="automation" data-project="workflow"><div class="project-icon">🔄</div><h3>Business Workflow Automation</h3><p>Process improvements and practical automation ideas for day-to-day operations.</p><div class="project-tags"><span class="tag">Process</span><span class="tag">Automation</span></div><div class="project-actions"><button class="details-btn" data-open-project="workflow">View Details →</button></div></article>
-    <article class="card project" data-category="data" data-project="file-system"><div class="project-icon">📁</div><h3>File Organization & Backup System</h3><p>Structured file storage, synchronization and backup workflow.</p><div class="project-tags"><span class="tag">File Management</span><span class="tag">Backup</span></div><div class="project-actions"><button class="details-btn" data-open-project="file-system">View Details →</button></div></article>
-    <article class="card project" data-category="creative" data-project="business-enhance"><div class="project-icon">💡</div><h3>Business Suggestions & Enhancements</h3><p>Identifying practical ideas, tools and improvements for better efficiency.</p><div class="project-tags"><span class="tag">Ideas</span><span class="tag">Improvement</span></div><div class="project-actions"><button class="details-btn" data-open-project="business-enhance">View Details →</button></div></article>
+    <article class="card project" data-category="creative" data-project="social-design"><div class="project-icon">🎨</div><h3>Instagram & Facebook Creative Design</h3><p>Promotional posts, festival creatives and business offers.</p><div class="project-tags"><span class="tag">Canva</span><span class="tag">Social Media</span></div><div class="project-actions"><button class="details-btn" data-open-project="social-design">View Details →</button></div></article>
+    <article class="card project" data-category="automation" data-project="workflow"><div class="project-icon">🔄</div><h3>Business Workflow Automation</h3><p>Process improvement and efficiency enhancement for day-to-day operations.</p><div class="project-tags"><span class="tag">Process</span><span class="tag">Automation</span></div><div class="project-actions"><button class="details-btn" data-open-project="workflow">View Details →</button></div></article>
+    <article class="card project" data-category="dashboard" data-project="sheets-dashboard"><div class="project-icon">💼</div><h3>Google Sheets Business Dashboard</h3><p>Expense, investment, loan and savings tracking dashboard for organized financial management.</p><div class="project-tags"><span class="tag">Google Sheets</span><span class="tag">Dashboard</span></div><div class="project-actions"><button class="details-btn" data-open-project="sheets-dashboard">View Details →</button></div></article>
+    <article class="card project" data-category="data" data-project="sales-history"><div class="project-icon">₹</div><h3>Sales History & Rate Management</h3><p>Product-wise sales history and rate tracking for easier business management.</p><div class="project-tags"><span class="tag">Sales</span><span class="tag">Rate Management</span></div><div class="project-actions"><button class="details-btn" data-open-project="sales-history">View Details →</button></div></article>
     <div class="no-results" id="noResults">No projects found for this filter.</div>
   </div>
 </div>
@@ -479,7 +505,7 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:12px}
 </div>
 </section>
 
-<footer>© <span id="year"></span> Deepak Pal · Data Analyst & Digital Solutions</footer>
+<footer>© <span id="year"></span> Deepak Pal · Business Support & Digital Solutions</footer>
 
 <!-- Project details modal -->
 <div class="modal" id="projectModal" aria-hidden="true">
@@ -515,14 +541,16 @@ const projectData = {
  "sales-dashboard": ["Sales Dashboard & Analytics","Sales tracking and visual reporting for business-level insights.","Dashboard • Analytics","Focuses on visibility into sales information and easier review of business performance."],
  "rate-app": ["Product Rate Checking Web App","A web interface connected with Google Sheets for product and sales workflows.","Apps Script • HTML • CSS • JavaScript","Focuses on product lookup, rate checking and a mobile-friendly business workflow."],
  "freedom-macro": ["Freedom Macro – Data Processing","CSV processing, data organization and workflow automation for recurring reporting tasks.","Excel • Automation","Focuses on repeatable data preparation and reducing manual processing steps."],
- "quicksight": ["QuickSight Reporting","Workforce, labor-detail and project reporting workflows using business intelligence reports.","QuickSight • Reporting","Focuses on structured reporting and analysis from business intelligence data."],
+ "quicksight": ["Amazon QuickSight Reporting","Workforce, labor-detail and project reporting workflows using business intelligence reports.","QuickSight • Reporting","Focuses on structured reporting and analysis from business intelligence data."],
  "labor-reporting": ["Labor Data Reporting System","Labor data processing, validation, reporting and project-specific workflow support.","Data • Reporting","Focuses on accurate processing, validation and reporting of labor information."],
- "mobile-ui": ["Mobile UI & UX Updates","Responsive interface improvements focused on usability across mobile screens.","HTML • CSS • Responsive UI","Focuses on mobile usability, layout and practical user experience."],
+ "mobile-ui": ["Mobile UI & User Experience Updates","Responsive interface improvements focused on usability across mobile screens.","HTML • CSS • Responsive UI","Focuses on mobile usability, layout and practical user experience."],
  "report-auto": ["Report Automation System","Structured recurring reporting processes to reduce repetitive manual work.","Automation • Reports","Focuses on consistent reporting steps and workflow efficiency."],
  "social-design": ["Instagram & Facebook Creative Design","Promotional post concepts and social-media creatives for business communication.","Canva • Social Media","Focuses on clear, business-oriented promotional creatives for social platforms."],
  "workflow": ["Business Workflow Automation","Process improvements and practical automation ideas for day-to-day operations.","Process • Automation","Focuses on simplifying repeatable business tasks and improving workflow visibility."],
  "file-system": ["File Organization & Backup System","Structured file storage, synchronization and backup workflow.","File Management • Backup","Focuses on organized files and a more consistent backup approach."],
  "business-enhance": ["Business Suggestions & Enhancements","Identifying practical ideas, tools and improvements for better efficiency.","Ideas • Improvement","Focuses on practical enhancements that can make everyday business processes easier."]
+  "sheets-dashboard": ["Google Sheets Business Dashboard","Expense, investment, loan and savings tracking dashboard for organized financial management.","Google Sheets • Dashboard","Focuses on structured tracking of business and financial information in one dashboard."],
+  "sales-history": ["Sales History & Rate Management","Product-wise sales history and rate tracking for easier business management.","Sales • Rate Management","Focuses on product-level sales history and rate visibility."]
 };
 
 function openModal(id){const el=document.getElementById(id); if(!el)return; el.classList.add("show");el.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";}
