@@ -1,1465 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Deepak Pal | Excel, SQL & Business Automation</title>
-
-<meta name="description"
-content="Deepak Pal helps businesses with Excel data analysis, Google Sheets automation, dashboards, SQL reporting and practical business solutions.">
-
-<meta name="keywords"
-content="Excel Data Analyst, Google Sheets Automation, SQL, Business Dashboard, Apps Script, Data Reporting">
-
-<style>
-:root{
-    --bg:#f7f8fc;
-    --card:#ffffff;
-    --text:#172033;
-    --muted:#667085;
-    --primary:#2563eb;
-    --primary-dark:#1d4ed8;
-    --border:#e5e7eb;
-    --soft:#eef4ff;
-    --success:#16a34a;
-    --shadow:0 15px 40px rgba(15,23,42,.08);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Inter,Arial,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-.container{
-    width:min(1120px,92%);
-    margin:auto;
-}
-
-/* NAVBAR */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(255,255,255,.92);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--border);
-}
-
-.nav{
-    height:70px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-size:24px;
-    font-weight:800;
-    color:var(--primary);
-}
-
-.nav-links{
-    display:flex;
-    gap:26px;
-    list-style:none;
-}
-
-.nav-links a{
-    font-size:14px;
-    font-weight:600;
-    color:#475467;
-}
-
-.nav-links a:hover{
-    color:var(--primary);
-}
-
-.menu-btn{
-    display:none;
-    border:0;
-    background:none;
-    font-size:25px;
-}
-
-/* HERO */
-
-.hero{
-    padding:100px 0 80px;
-    background:
-        radial-gradient(circle at 80% 20%,#dbeafe 0,transparent 35%),
-        var(--bg);
-}
-
-.hero-grid{
-    display:grid;
-    grid-template-columns:1.25fr .75fr;
-    gap:60px;
-    align-items:center;
-}
-
-.badge{
-    display:inline-flex;
-    padding:8px 14px;
-    background:var(--soft);
-    color:var(--primary);
-    border-radius:30px;
-    font-size:13px;
-    font-weight:700;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-size:clamp(40px,6vw,68px);
-    line-height:1.05;
-    letter-spacing:-2px;
-    margin-bottom:20px;
-}
-
-.hero h1 span{
-    color:var(--primary);
-}
-
-.hero p{
-    max-width:650px;
-    color:var(--muted);
-    font-size:18px;
-    margin-bottom:30px;
-}
-
-.buttons{
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:13px 21px;
-    border-radius:10px;
-    font-weight:700;
-    font-size:14px;
-    border:1px solid var(--border);
-    transition:.2s;
-}
-
-.btn-primary{
-    background:var(--primary);
-    color:white;
-    border-color:var(--primary);
-}
-
-.btn-primary:hover{
-    background:var(--primary-dark);
-}
-
-.btn-light{
-    background:white;
-}
-
-.hero-card{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:var(--shadow);
-    border:1px solid var(--border);
-}
-
-.hero-avatar{
-    width:80px;
-    height:80px;
-    border-radius:20px;
-    display:grid;
-    place-items:center;
-    background:var(--primary);
-    color:white;
-    font-size:28px;
-    font-weight:800;
-    margin-bottom:20px;
-}
-
-.hero-card h3{
-    margin-bottom:8px;
-}
-
-.hero-card p{
-    font-size:14px;
-    margin-bottom:20px;
-}
-
-.mini-stats{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-}
-
-.mini-stat{
-    background:#f8fafc;
-    padding:14px;
-    border-radius:12px;
-}
-
-.mini-stat strong{
-    display:block;
-    font-size:22px;
-}
-
-.mini-stat span{
-    color:var(--muted);
-    font-size:12px;
-}
-
-/* SECTIONS */
-
-section{
-    padding:80px 0;
-}
-
-.section-head{
-    max-width:700px;
-    margin-bottom:40px;
-}
-
-.eyebrow{
-    color:var(--primary);
-    font-size:13px;
-    font-weight:800;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    margin-bottom:8px;
-}
-
-.section-head h2{
-    font-size:38px;
-    line-height:1.15;
-    margin-bottom:12px;
-}
-
-.section-head p{
-    color:var(--muted);
-}
-
-/* TRUST STRIP */
-
-.trust{
-    background:#111827;
-    color:white;
-    padding:28px 0;
-}
-
-.trust-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-    text-align:center;
-}
-
-.trust-item strong{
-    display:block;
-    font-size:28px;
-}
-
-.trust-item span{
-    font-size:13px;
-    color:#cbd5e1;
-}
-
-/* SERVICES */
-
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:26px;
-    box-shadow:0 8px 25px rgba(15,23,42,.04);
-}
-
-.icon{
-    width:46px;
-    height:46px;
-    display:grid;
-    place-items:center;
-    background:var(--soft);
-    color:var(--primary);
-    border-radius:12px;
-    font-size:21px;
-    margin-bottom:18px;
-}
-
-.card h3{
-    margin-bottom:9px;
-}
-
-.card p{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* CASE STUDIES */
-
-.filters{
-    display:flex;
-    gap:9px;
-    flex-wrap:wrap;
-    margin-bottom:28px;
-}
-
-.filter{
-    border:1px solid var(--border);
-    background:white;
-    padding:9px 15px;
-    border-radius:30px;
-    cursor:pointer;
-    font-size:13px;
-    font-weight:700;
-}
-
-.filter.active,
-.filter:hover{
-    background:var(--primary);
-    color:white;
-    border-color:var(--primary);
-}
-
-.project-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.project{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:18px;
-    overflow:hidden;
-    transition:.25s;
-}
-
-.project:hover{
-    transform:translateY(-5px);
-    box-shadow:var(--shadow);
-}
-
-.project-top{
-    height:140px;
-    background:linear-gradient(135deg,#dbeafe,#eff6ff);
-    display:grid;
-    place-items:center;
-    font-size:48px;
-}
-
-.project-body{
-    padding:22px;
-}
-
-.project-body h3{
-    margin-bottom:8px;
-}
-
-.project-body p{
-    color:var(--muted);
-    font-size:13px;
-    margin-bottom:15px;
-}
-
-.tags{
-    display:flex;
-    gap:7px;
-    flex-wrap:wrap;
-}
-
-.tag{
-    background:#f1f5f9;
-    padding:5px 9px;
-    border-radius:6px;
-    font-size:11px;
-    font-weight:700;
-}
-
-/* PROCESS */
-
-.process-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.step{
-    position:relative;
-}
-
-.step-number{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    background:var(--primary);
-    color:white;
-    display:grid;
-    place-items:center;
-    font-weight:800;
-    margin-bottom:15px;
-}
-
-/* SKILLS */
-
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.skill{
-    padding:12px 17px;
-    background:white;
-    border:1px solid var(--border);
-    border-radius:10px;
-    font-weight:700;
-    font-size:14px;
-}
-
-/* CLIENTS */
-
-.client-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.client-card{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:24px;
-}
-
-.client-number{
-    color:var(--primary);
-    font-weight:800;
-    margin-bottom:15px;
-}
-
-.client-card p{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* CTA */
-
-.cta{
-    background:#111827;
-    color:white;
-    border-radius:24px;
-    padding:60px;
-    text-align:center;
-}
-
-.cta h2{
-    font-size:40px;
-    margin-bottom:14px;
-}
-
-.cta p{
-    color:#cbd5e1;
-    max-width:650px;
-    margin:0 auto 25px;
-}
-
-.cta .btn-light{
-    color:#111827;
-}
-
-/* CONTACT */
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:.8fr 1.2fr;
-    gap:30px;
-}
-
-.contact-info{
-    display:grid;
-    gap:15px;
-}
-
-.contact-item{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:14px;
-    padding:18px;
-}
-
-.contact-item small{
-    display:block;
-    color:var(--muted);
-    margin-bottom:4px;
-}
-
-form{
-    background:white;
-    padding:28px;
-    border:1px solid var(--border);
-    border-radius:18px;
-}
-
-.form-group{
-    margin-bottom:16px;
-}
-
-label{
-    display:block;
-    font-size:13px;
-    font-weight:700;
-    margin-bottom:7px;
-}
-
-input,
-textarea,
-select{
-    width:100%;
-    padding:12px 13px;
-    border:1px solid var(--border);
-    border-radius:9px;
-    font:inherit;
-    outline:none;
-}
-
-input:focus,
-textarea:focus,
-select:focus{
-    border-color:var(--primary);
-}
-
-textarea{
-    min-height:120px;
-    resize:vertical;
-}
-
-/* FOOTER */
-
-footer{
-    background:#0b1120;
-    color:#cbd5e1;
-    padding:35px 0;
-}
-
-.footer{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    align-items:center;
-}
-
-.footer strong{
-    color:white;
-}
-
-/* MOBILE */
-
-@media(max-width:850px){
-
-    .nav-links{
-        display:none;
-        position:absolute;
-        top:70px;
-        left:0;
-        right:0;
-        background:white;
-        flex-direction:column;
-        padding:20px;
-        border-bottom:1px solid var(--border);
-    }
-
-    .nav-links.show{
-        display:flex;
-    }
-
-    .menu-btn{
-        display:block;
-    }
-
-    .hero-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    .service-grid,
-    .project-grid,
-    .client-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .process-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .trust-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .hero{
-        padding:70px 0;
-    }
-}
-
-@media(max-width:560px){
-
-    section{
-        padding:60px 0;
-    }
-
-    .hero h1{
-        font-size:42px;
-    }
-
-    .section-head h2{
-        font-size:30px;
-    }
-
-    .service-grid,
-    .project-grid,
-    .client-grid,
-    .process-grid{
-        grid-template-columns:1fr;
-    }
-
-    .trust-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .cta{
-        padding:40px 20px;
-    }
-
-    .cta h2{
-        font-size:30px;
-    }
-
-    .footer{
-        flex-direction:column;
-        text-align:center;
-    }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Deepak Pal — Excel and Google Sheets Data Analyst specializing in dashboards, SQL, automation and business reporting.">
+  <meta name="keywords" content="Excel Data Analyst, Google Sheets Automation, SQL, Dashboard, Apps Script, Business Reporting">
+  <meta name="author" content="Deepak Pal">
+  <title>Deepak Pal | Excel, SQL & Business Automation</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- NAVIGATION -->
-
-<header>
-<div class="container nav">
-
-<a href="#home" class="logo">DP.</a>
-
-<ul class="nav-links" id="navLinks">
-<li><a href="#about">About</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#clients">Clients</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-</div>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="#home">DP.</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <nav id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#clients">Clients</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
-
-<!-- HERO -->
-
+<main>
 <section class="hero" id="home">
-<div class="container hero-grid">
-
-<div>
-
-<div class="badge">
-BUSINESS DATA • AUTOMATION • REPORTING
-</div>
-
-<h1>
-Excel & Google Sheets
-<span>Data Analyst</span>
-</h1>
-
-<p>
-I help businesses organize data, build practical dashboards,
-automate repetitive workflows and turn spreadsheets into useful
-business systems.
-</p>
-
-<div class="buttons">
-
-<a href="#contact" class="btn btn-primary">
-Start a Project →
-</a>
-
-<a href="#projects" class="btn btn-light">
-View My Work
-</a>
-
-</div>
-
-</div>
-
-
-<div class="hero-card">
-
-<div class="hero-avatar">DP</div>
-
-<h3>Deepak Pal</h3>
-
-<p>
-Data Analysis • Dashboards • Automation • SQL • Business Reporting
-</p>
-
-<div class="mini-stats">
-
-<div class="mini-stat">
-<strong>12+</strong>
-<span>Projects</span>
-</div>
-
-<div class="mini-stat">
-<strong>3+</strong>
-<span>Clients</span>
-</div>
-
-<div class="mini-stat">
-<strong>8+</strong>
-<span>Tools</span>
-</div>
-
-<div class="mini-stat">
-<strong>5+</strong>
-<span>Core Areas</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow-pill">DATA • DASHBOARDS • AUTOMATION • REPORTING</span>
+      <h1>Excel & Google Sheets <span>Data Analyst</span></h1>
+      <p>I help businesses organize data, build practical dashboards, automate repetitive workflows, and turn spreadsheets into useful business systems.</p>
+      <div class="button-row">
+        <a class="btn primary" href="#contact">Start a Project →</a>
+        <a class="btn secondary" href="#projects">View My Work</a>
+      </div>
+      <div class="hero-trust">
+        <span>✓ Clear communication</span>
+        <span>✓ Practical solutions</span>
+        <span>✓ Business-focused delivery</span>
+      </div>
+    </div>
+    <div class="profile-card">
+      <div class="profile-photo-wrap">
+        <img src="images/profile.jpg" alt="Deepak Pal" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+        <div class="profile-fallback">DP</div>
+      </div>
+      <h2>Deepak Pal</h2>
+      <p>Data Analysis • Dashboards • Automation • SQL • Business Reporting</p>
+      <div class="stats">
+        <div><strong>12+</strong><small>Projects</small></div>
+        <div><strong>3+</strong><small>Clients</small></div>
+        <div><strong>8+</strong><small>Tools</small></div>
+        <div><strong>5+</strong><small>Core Areas</small></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<!-- TRUST -->
-
-<div class="trust">
-<div class="container trust-grid">
-
-<div class="trust-item">
-<strong>12+</strong>
-<span>Projects</span>
-</div>
-
-<div class="trust-item">
-<strong>3+</strong>
-<span>Clients</span>
-</div>
-
-<div class="trust-item">
-<strong>8+</strong>
-<span>Tools</span>
-</div>
-
-<div class="trust-item">
-<strong>5+</strong>
-<span>Core Areas</span>
-</div>
-
-</div>
-</div>
-
-
-<!-- ABOUT -->
+<section class="dark-strip">
+  <div class="container trust-grid">
+    <div><strong>12+</strong><span>Projects</span></div>
+    <div><strong>3+</strong><span>Clients</span></div>
+    <div><strong>8+</strong><span>Tools</span></div>
+    <div><strong>5+</strong><span>Core Areas</span></div>
+  </div>
+</section>
 
 <section id="about">
-<div class="container">
-
-<div class="section-head">
-<div class="eyebrow">About Me</div>
-<h2>Practical data solutions for real business problems.</h2>
-
-<p>
-I work with Excel, SQL, Google Sheets, Apps Script and reporting
-tools to create organized, easy-to-use business solutions.
-</p>
-</div>
-
-<div class="card">
-
-<h3>Professional Summary</h3>
-
-<p>
-Data-focused professional with practical experience in Excel-based
-reporting, CSV processing, data management, dashboards, Google Sheets,
-automation and digital business systems.
-</p>
-
-<br>
-
-<p>
-My focus is simple:
-<strong>clean data, clear reporting and practical automation.</strong>
-</p>
-
-</div>
-
-</div>
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">ABOUT ME</span>
+      <h2>Practical data solutions for real business problems.</h2>
+      <p>I focus on organized data, clear reporting, dashboards, automation and practical workflow improvements.</p>
+    </div>
+    <div class="about-grid">
+      <div class="card">
+        <h3>Professional Summary</h3>
+        <p>Data-focused professional with practical work across Excel-based reporting, data management, dashboards, Google Sheets, Apps Script, CSV processing and digital business systems.</p>
+        <p>My approach is simple: <strong>clean data, clear reporting and practical automation.</strong></p>
+      </div>
+      <div class="card">
+        <h3>What I Work On</h3>
+        <div class="chips">
+          <span>Data Analysis</span><span>Business Reporting</span><span>Dashboards</span>
+          <span>Automation</span><span>Google Sheets</span><span>Web Apps</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<!-- SERVICES -->
-
-<section id="services">
-<div class="container">
-
-<div class="section-head">
-<div class="eyebrow">Services</div>
-<h2>How I can help your business</h2>
-
-<p>
-From spreadsheet cleanup to automated reporting systems,
-I build practical solutions around your workflow.
-</p>
-</div>
-
-<div class="service-grid">
-
-<div class="card">
-<div class="icon">📊</div>
-<h3>Excel Data Analysis</h3>
-<p>
-Data cleaning, validation, formulas, reporting and structured
-analysis for business data.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">📈</div>
-<h3>Business Dashboards</h3>
-<p>
-Sales, operational and management dashboards for quick business review.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">⚙️</div>
-<h3>Google Sheets Automation</h3>
-<p>
-Automated workflows using Google Sheets and Apps Script.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">💻</div>
-<h3>Business Web Apps</h3>
-<p>
-Simple responsive web applications for search, tracking and business workflows.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🗄️</div>
-<h3>SQL Data Analysis</h3>
-<p>
-Queries, filtering, aggregation and business-focused data analysis.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">☁️</div>
-<h3>Reporting Automation</h3>
-<p>
-Recurring reporting workflows using Excel, CSV and BI reporting tools.
-</p>
-</div>
-
-</div>
-</div>
+<section id="services" class="soft-section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">SERVICES</span>
+      <h2>How I can help your business</h2>
+      <p>From spreadsheet cleanup to automated reporting systems, I build practical solutions around your workflow.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card service"><div class="icon">📊</div><h3>Excel Data Analysis</h3><p>Data cleaning, validation, formulas, reporting and structured analysis for business data.</p></article>
+      <article class="card service"><div class="icon">📈</div><h3>Business Dashboards</h3><p>Sales, operational and management dashboards for quick business review.</p></article>
+      <article class="card service"><div class="icon">⚙️</div><h3>Google Sheets Automation</h3><p>Automated workflows using Google Sheets and Apps Script.</p></article>
+      <article class="card service"><div class="icon">💻</div><h3>Business Web Apps</h3><p>Simple responsive web applications for search, tracking and business workflows.</p></article>
+      <article class="card service"><div class="icon">🗄️</div><h3>SQL Data Analysis</h3><p>Queries, filtering, aggregation and business-focused data analysis.</p></article>
+      <article class="card service"><div class="icon">☁️</div><h3>Reporting Automation</h3><p>Recurring reporting workflows using Excel, CSV and BI reporting tools.</p></article>
+    </div>
+  </div>
 </section>
-
-
-<!-- PROJECTS -->
 
 <section id="projects">
-<div class="container">
-
-<div class="section-head">
-<div class="eyebrow">Case Studies</div>
-<h2>Selected work</h2>
-
-<p>
-A selection of practical data, dashboard, automation and web projects.
-</p>
-</div>
-
-
-<div class="filters">
-
-<button class="filter active" onclick="filterProjects('all',this)">
-All
-</button>
-
-<button class="filter" onclick="filterProjects('data',this)">
-Data & Reporting
-</button>
-
-<button class="filter" onclick="filterProjects('dashboard',this)">
-Dashboards
-</button>
-
-<button class="filter" onclick="filterProjects('automation',this)">
-Automation
-</button>
-
-<button class="filter" onclick="filterProjects('web',this)">
-Web Apps
-</button>
-
-</div>
-
-
-<div class="project-grid">
-
-
-<div class="project" data-category="data">
-<div class="project-top">📊</div>
-<div class="project-body">
-<h3>Product Database & Search System</h3>
-
-<p>
-Organized product database with search, filters,
-stock information and easier product management.
-</p>
-
-<div class="tags">
-<span class="tag">Google Sheets</span>
-<span class="tag">Data</span>
-<span class="tag">Automation</span>
-</div>
-</div>
-</div>
-
-
-<div class="project" data-category="dashboard">
-<div class="project-top">📈</div>
-<div class="project-body">
-<h3>Sales Dashboard & Analytics</h3>
-
-<p>
-Business dashboard for tracking sales,
-performance and product-level information.
-</p>
-
-<div class="tags">
-<span class="tag">Dashboard</span>
-<span class="tag">Excel</span>
-<span class="tag">Analytics</span>
-</div>
-</div>
-</div>
-
-
-<div class="project" data-category="web">
-<div class="project-top">💻</div>
-<div class="project-body">
-<h3>Product Rate Checking Web App</h3>
-
-<p>
-Web application for quickly searching product
-information and rates.
-</p>
-
-<div class="tags">
-<span class="tag">Apps Script</span>
-<span class="tag">HTML</span>
-<span class="tag">JavaScript</span>
-</div>
-</div>
-</div>
-
-
-<div class="project" data-category="automation">
-<div class="project-top">⚙️</div>
-<div class="project-body">
-<h3>Freedom Macro – Data Processing</h3>
-
-<p>
-CSV processing, data cleaning and recurring reporting automation.
-</p>
-
-<div class="tags">
-<span class="tag">Excel</span>
-<span class="tag">CSV</span>
-<span class="tag">Automation</span>
-</div>
-</div>
-</div>
-
-
-<div class="project" data-category="dashboard">
-<div class="project-top">☁️</div>
-<div class="project-body">
-<h3>Amazon QuickSight Reporting</h3>
-
-<p>
-Workforce statistics, labor reporting and project reporting workflows.
-</p>
-
-<div class="tags">
-<span class="tag">QuickSight</span>
-<span class="tag">Reporting</span>
-<span class="tag">Data</span>
-</div>
-</div>
-</div>
-
-
-<div class="project" data-category="data">
-<div class="project-top">👥</div>
-<div class="project-body">
-<h3>Labor Data Reporting System</h3>
-
-<p>
-Labor data processing, validation and structured reporting workflow.
-</p>
-
-<div class="tags">
-<span class="tag">Data</span>
-<span class="tag">Excel</span>
-<span class="tag">Reporting</span>
-</div>
-</div>
-</div>
-
-
-<div class="project" data-category="automation">
-<div class="project-top">🔄</div>
-<div class="project-body">
-<h3>Business Workflow Automation</h3>
-
-<p>
-Business process improvements designed to reduce repetitive manual work.
-</p>
-
-<div class="tags">
-<span class="tag">Automation</span>
-<span class="tag">Sheets</span>
-</div>
-</div>
-</div>
-
-
-<div class="project" data-category="dashboard">
-<div class="project-top">💼</div>
-<div class="project-body">
-<h3>Google Sheets Business Dashboard</h3>
-
-<p>
-Structured dashboard for tracking business information and financial activity.
-</p>
-
-<div class="tags">
-<span class="tag">Google Sheets</span>
-<span class="tag">Dashboard</span>
-</div>
-</div>
-</div>
-
-
-<div class="project" data-category="web">
-<div class="project-top">📱</div>
-<div class="project-body">
-<h3>Mobile Business Web Interface</h3>
-
-<p>
-Responsive mobile interface improvements for practical business workflows.
-</p>
-
-<div class="tags">
-<span class="tag">HTML</span>
-<span class="tag">CSS</span>
-<span class="tag">JavaScript</span>
-</div>
-</div>
-</div>
-
-
-</div>
-</div>
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">CASE STUDIES</span>
+      <h2>Selected work</h2>
+      <p>Practical data, dashboard, automation and web projects.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Project filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="data">Data & Reporting</button>
+      <button class="filter" data-filter="dashboard">Dashboards</button>
+      <button class="filter" data-filter="automation">Automation</button>
+      <button class="filter" data-filter="web">Web Apps</button>
+    </div>
+    <div class="project-grid">
+      <article class="project" data-category="data" data-title="Product Database & Search System" data-description="Structured product data with search, filters and easier product management." data-tools="Google Sheets • Data • Automation" data-image="images/product-database.png">
+        <div class="project-image"><img src="images/product-database.png" alt="Product Database" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span>📊</span></div>
+        <div class="project-body"><h3>Product Database & Search System</h3><p>Structured product data with search, filters and easier product management.</p><div class="tags"><span>Google Sheets</span><span>Data</span><span>Automation</span></div><button class="details-btn">View Case Study →</button></div>
+      </article>
+      <article class="project" data-category="dashboard" data-title="Sales Dashboard & Analytics" data-description="Sales tracking and performance dashboard for business review." data-tools="Excel • Dashboard • Analytics" data-image="images/sales-dashboard.png">
+        <div class="project-image"><img src="images/sales-dashboard.png" alt="Sales Dashboard" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span>📈</span></div>
+        <div class="project-body"><h3>Sales Dashboard & Analytics</h3><p>Sales tracking and performance dashboard for business review.</p><div class="tags"><span>Dashboard</span><span>Excel</span><span>Analytics</span></div><button class="details-btn">View Case Study →</button></div>
+      </article>
+      <article class="project" data-category="web" data-title="Product Rate Checking Web App" data-description="Google Apps Script and HTML web application for product rate checking." data-tools="Apps Script • HTML • JavaScript" data-image="images/product-rate-app.png">
+        <div class="project-image"><img src="images/product-rate-app.png" alt="Product Rate Web App" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span>💻</span></div>
+        <div class="project-body"><h3>Product Rate Checking Web App</h3><p>Web application for quickly searching product information and rates.</p><div class="tags"><span>Apps Script</span><span>HTML</span><span>JavaScript</span></div><button class="details-btn">View Case Study →</button></div>
+      </article>
+      <article class="project" data-category="automation" data-title="Freedom Macro – Data Processing" data-description="CSV processing, data cleaning and automation for recurring reporting tasks." data-tools="Excel • CSV • Automation">
+        <div class="project-image no-image">⚙️</div><div class="project-body"><h3>Freedom Macro – Data Processing</h3><p>CSV processing, data cleaning and automation for recurring reporting tasks.</p><div class="tags"><span>Excel</span><span>CSV</span><span>Automation</span></div><button class="details-btn">View Case Study →</button></div>
+      </article>
+      <article class="project" data-category="dashboard" data-title="Amazon QuickSight Reporting" data-description="Workforce stats, labor detail and project reporting workflows." data-tools="QuickSight • Reporting • Data">
+        <div class="project-image no-image">☁️</div><div class="project-body"><h3>Amazon QuickSight Reporting</h3><p>Workforce stats, labor detail and project reporting workflows.</p><div class="tags"><span>QuickSight</span><span>Reporting</span><span>Data</span></div><button class="details-btn">View Case Study →</button></div>
+      </article>
+      <article class="project" data-category="data" data-title="Labor Data Reporting System" data-description="Labor data processing, validation, reporting and project workflow support." data-tools="Excel • Data • Reporting">
+        <div class="project-image no-image">👥</div><div class="project-body"><h3>Labor Data Reporting System</h3><p>Labor data processing, validation and structured reporting workflow.</p><div class="tags"><span>Data</span><span>Excel</span><span>Reporting</span></div><button class="details-btn">View Case Study →</button></div>
+      </article>
+      <article class="project" data-category="web" data-title="Mobile UI & User Experience Updates" data-description="Responsive design and mobile-view improvements focused on usability." data-tools="HTML • CSS • JavaScript">
+        <div class="project-image no-image">📱</div><div class="project-body"><h3>Mobile UI & UX Updates</h3><p>Responsive design and mobile-view improvements focused on usability.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><button class="details-btn">View Case Study →</button></div>
+      </article>
+      <article class="project" data-category="automation" data-title="Report Automation System" data-description="Structured recurring reporting processes to reduce repetitive manual work." data-tools="Automation • Reports">
+        <div class="project-image no-image">🔄</div><div class="project-body"><h3>Report Automation System</h3><p>Structured recurring reporting processes to reduce repetitive manual work.</p><div class="tags"><span>Automation</span><span>Reports</span></div><button class="details-btn">View Case Study →</button></div>
+      </article>
+      <article class="project" data-category="automation" data-title="Business Workflow Automation" data-description="Process improvement and efficiency enhancement for day-to-day operations." data-tools="Process Automation • Sheets">
+        <div class="project-image no-image">⚡</div><div class="project-body"><h3>Business Workflow Automation</h3><p>Process improvement and efficiency enhancement for day-to-day operations.</p><div class="tags"><span>Automation</span><span>Workflow</span></div><button class="details-btn">View Case Study →</button></div>
+      </article>
+      <article class="project" data-category="dashboard" data-title="Google Sheets Business Dashboard" data-description="Expense, investment, loan and savings tracking dashboard for organized financial management." data-tools="Google Sheets • Dashboard">
+        <div class="project-image no-image">💼</div><div class="project-body"><h3>Google Sheets Business Dashboard</h3><p>Organized dashboard for business and financial tracking.</p><div class="tags"><span>Google Sheets</span><span>Dashboard</span></div><button class="details-btn">View Case Study →</button></div>
+      </article>
+      <article class="project" data-category="data" data-title="Sales History & Rate Management" data-description="Product-wise sales history and rate tracking for easier business management." data-tools="Sales • Rate Management">
+        <div class="project-image no-image">₹</div><div class="project-body"><h3>Sales History & Rate Management</h3><p>Product-wise sales history and rate tracking for easier business management.</p><div class="tags"><span>Sales</span><span>Data</span></div><button class="details-btn">View Case Study →</button></div>
+      </article>
+    </div>
+  </div>
 </section>
 
-
-<!-- PROCESS -->
-
-<section>
-<div class="container">
-
-<div class="section-head">
-<div class="eyebrow">How I Work</div>
-<h2>A simple project process</h2>
-</div>
-
-<div class="process-grid">
-
-<div class="card step">
-<div class="step-number">1</div>
-<h3>Understand</h3>
-<p>
-Understand your business problem, data and requirements.
-</p>
-</div>
-
-<div class="card step">
-<div class="step-number">2</div>
-<h3>Build</h3>
-<p>
-Create the dashboard, spreadsheet, automation or reporting solution.
-</p>
-</div>
-
-<div class="card step">
-<div class="step-number">3</div>
-<h3>Test</h3>
-<p>
-Check calculations, workflow and usability before delivery.
-</p>
-</div>
-
-<div class="card step">
-<div class="step-number">4</div>
-<h3>Deliver</h3>
-<p>
-Provide the finished solution with clear instructions for use.
-</p>
-</div>
-
-</div>
-</div>
+<section class="soft-section">
+  <div class="container">
+    <div class="section-heading"><span class="eyebrow">HOW I WORK</span><h2>A simple project process</h2></div>
+    <div class="process-grid">
+      <div class="card"><b class="step">1</b><h3>Understand</h3><p>Understand your business problem, data and requirements.</p></div>
+      <div class="card"><b class="step">2</b><h3>Build</h3><p>Create the dashboard, spreadsheet, automation or reporting solution.</p></div>
+      <div class="card"><b class="step">3</b><h3>Test</h3><p>Check calculations, workflow and usability before delivery.</p></div>
+      <div class="card"><b class="step">4</b><h3>Deliver</h3><p>Provide the finished solution with clear instructions for use.</p></div>
+    </div>
+  </div>
 </section>
-
-
-<!-- SKILLS -->
 
 <section id="skills">
-<div class="container">
-
-<div class="section-head">
-<div class="eyebrow">Tools & Technologies</div>
-<h2>My working toolkit</h2>
-</div>
-
-<div class="skills">
-
-<div class="skill">Excel</div>
-<div class="skill">SQL</div>
-<div class="skill">Google Sheets</div>
-<div class="skill">Google Apps Script</div>
-<div class="skill">Amazon QuickSight</div>
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">Canva</div>
-<div class="skill">Photoshop</div>
-
-</div>
-
-</div>
+  <div class="container">
+    <div class="section-heading"><span class="eyebrow">TOOLS & TECHNOLOGIES</span><h2>My working toolkit</h2></div>
+    <div class="skills">
+      <span>Excel</span><span>SQL</span><span>Google Sheets</span><span>Google Apps Script</span>
+      <span>Amazon QuickSight</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Canva</span><span>Photoshop</span>
+    </div>
+  </div>
 </section>
 
-
-<!-- CLIENTS -->
-
-<section id="clients">
-<div class="container">
-
-<div class="section-head">
-<div class="eyebrow">Client Work</div>
-<h2>Businesses I have worked with</h2>
-</div>
-
-<div class="client-grid">
-
-<div class="client-card">
-<div class="client-number">01</div>
-<h3>Om Glass Decor</h3>
-<p>
-Employee database, attendance, salary and employee monitoring.
-</p>
-</div>
-
-<div class="client-card">
-<div class="client-number">02</div>
-<h3>Aaradhya Fashion</h3>
-<p>
-Product database, sales management, dashboards and business systems.
-</p>
-</div>
-
-<div class="client-card">
-<div class="client-number">03</div>
-<h3>Vinayak Furniture</h3>
-<p>
-Shop dashboard and employee database solutions.
-</p>
-</div>
-
-</div>
-
-</div>
+<section id="clients" class="soft-section">
+  <div class="container">
+    <div class="section-heading"><span class="eyebrow">CLIENT WORK</span><h2>Businesses I have worked with</h2></div>
+    <div class="grid-3">
+      <article class="card"><b class="client-no">01</b><h3>Om Glass Decor</h3><p>Employee database — attendance, salary and employee monitoring.</p></article>
+      <article class="card"><b class="client-no">02</b><h3>Aaradhya Fashion</h3><p>Shop dashboard, product database, sales management and business systems.</p></article>
+      <article class="card"><b class="client-no">03</b><h3>Vinayak Furniture</h3><p>Shop dashboard and employee database solutions.</p></article>
+    </div>
+  </div>
 </section>
 
-
-<!-- CTA -->
-
-<section>
-<div class="container">
-
-<div class="cta">
-
-<h2>Have an Excel, Google Sheets or reporting problem?</h2>
-
-<p>
-Tell me what you are trying to organize, analyze or automate.
-I can help turn the requirement into a practical business solution.
-</p>
-
-<a href="#contact" class="btn btn-light">
-Start a Project →
-</a>
-
-</div>
-
-</div>
+<section class="cta-section">
+  <div class="container cta">
+    <span class="eyebrow">LET'S WORK TOGETHER</span>
+    <h2>Have an Excel, Google Sheets or reporting problem?</h2>
+    <p>Tell me what you are trying to organize, analyze or automate. Let's discuss a practical solution.</p>
+    <a class="btn light" href="#contact">Start a Project →</a>
+  </div>
 </section>
-
-
-<!-- CONTACT -->
 
 <section id="contact">
-<div class="container">
-
-<div class="section-head">
-<div class="eyebrow">Contact</div>
-<h2>Let's discuss your project</h2>
-
-<p>
-Have a project, reporting problem or automation idea?
-Send me a message and I will get back to you.
-</p>
-</div>
-
-<div class="contact-grid">
-
-<div class="contact-info">
-
-<div class="contact-item">
-<small>Email</small>
-<strong>deepbanny4@gmail.com</strong>
-</div>
-
-<div class="contact-item">
-<small>LinkedIn</small>
-<a href="https://www.linkedin.com/" target="_blank">
-Connect on LinkedIn →
-</a>
-</div>
-
-<div class="contact-item">
-<small>Focus</small>
-<strong>
-Excel • SQL • Dashboards • Automation
-</strong>
-</div>
-
-</div>
-
-
-<form onsubmit="sendEmail(event)">
-
-<div class="form-group">
-<label>Your Name</label>
-<input id="name" type="text" required>
-</div>
-
-<div class="form-group">
-<label>Your Email</label>
-<input id="email" type="email" required>
-</div>
-
-<div class="form-group">
-<label>Project Type</label>
-
-<select id="projectType">
-
-<option>Excel / Data Analysis</option>
-<option>Dashboard</option>
-<option>Google Sheets Automation</option>
-<option>Apps Script Web App</option>
-<option>SQL Analysis</option>
-<option>Other</option>
-
-</select>
-
-</div>
-
-<div class="form-group">
-<label>Tell me about your project</label>
-
-<textarea id="message" required></textarea>
-
-</div>
-
-<button class="btn btn-primary" type="submit">
-Send Project Inquiry →
-</button>
-
-</form>
-
-</div>
-
-</div>
+  <div class="container">
+    <div class="section-heading"><span class="eyebrow">CONTACT</span><h2>Let's discuss your project</h2><p>Send a short project brief and I can review the requirement.</p></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="card contact-item"><small>Email</small><strong>deepbanny4@gmail.com</strong></div>
+        <div class="card contact-item"><small>LinkedIn</small><a href="https://www.linkedin.com/" target="_blank" rel="noopener">Connect on LinkedIn →</a></div>
+        <div class="card contact-item"><small>Focus</small><strong>Excel • SQL • Dashboards • Automation</strong></div>
+      </div>
+      <form class="card" id="contactForm">
+        <label>Your Name<input id="name" required></label>
+        <label>Your Email<input id="email" type="email" required></label>
+        <label>Project Type
+          <select id="projectType">
+            <option>Excel / Data Analysis</option><option>Dashboard</option><option>Google Sheets Automation</option>
+            <option>Apps Script Web App</option><option>SQL Analysis</option><option>Other</option>
+          </select>
+        </label>
+        <label>Project Details<textarea id="message" required placeholder="Tell me about the data, problem, desired output and timeline."></textarea></label>
+        <button class="btn primary" type="submit">Send Project Inquiry →</button>
+        <p class="form-note">This opens your email app with the project details.</p>
+      </form>
+    </div>
+  </div>
 </section>
-
-
-<!-- FOOTER -->
+</main>
 
 <footer>
-
-<div class="container footer">
-
-<div>
-<strong>Deepak Pal</strong>
-<br>
-<span>Data Analysis • Dashboards • Automation</span>
-</div>
-
-<div>
-© 2026 Deepak Pal
-</div>
-
-</div>
-
+  <div class="container footer">
+    <div><strong>Deepak Pal</strong><span>Data Analysis • Dashboards • Automation</span></div>
+    <div>© <span id="year"></span> Deepak Pal</div>
+  </div>
 </footer>
 
+<div class="modal" id="projectModal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <img id="modalImage" alt="" class="modal-image">
+    <div id="modalIcon" class="modal-icon"></div>
+    <span class="eyebrow">CASE STUDY</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDescription"></p>
+    <div id="modalTools" class="tags"></div>
+    <a class="btn primary" href="#contact" id="modalCTA">Discuss a Similar Project →</a>
+  </div>
+</div>
 
-<script>
-
-/* MOBILE MENU */
-
-function toggleMenu(){
-
-    document
-    .getElementById("navLinks")
-    .classList
-    .toggle("show");
-
-}
-
-
-/* PROJECT FILTER */
-
-function filterProjects(category,button){
-
-    document
-    .querySelectorAll(".filter")
-    .forEach(btn => btn.classList.remove("active"));
-
-    button.classList.add("active");
-
-    document
-    .querySelectorAll(".project")
-    .forEach(project => {
-
-        if(category === "all" ||
-           project.dataset.category === category){
-
-            project.style.display = "block";
-
-        }else{
-
-            project.style.display = "none";
-
-        }
-
-    });
-
-}
-
-
-/* CONTACT FORM */
-
-function sendEmail(event){
-
-    event.preventDefault();
-
-    const name =
-        document.getElementById("name").value;
-
-    const email =
-        document.getElementById("email").value;
-
-    const type =
-        document.getElementById("projectType").value;
-
-    const message =
-        document.getElementById("message").value;
-
-
-    const subject =
-        encodeURIComponent(
-            "New Project Inquiry - " + type
-        );
-
-
-    const body =
-        encodeURIComponent(
-`Hello Deepak,
-
-I would like to discuss a project.
-
-Name: ${name}
-Email: ${email}
-Project Type: ${type}
-
-Project Details:
-${message}
-
-Thank you.`
-        );
-
-
-    window.location.href =
-        `mailto:deepbanny4@gmail.com?subject=${subject}&body=${body}`;
-
-}
-
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
